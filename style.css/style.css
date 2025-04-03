@@ -1,4 +1,4 @@
-/* Apply dark mode */
+/* Universal selector */
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +15,32 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Tablet Screens (768px and above) */
+@media (min-width: 768px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
 
+    .about {
+        max-width: 80%;
+        margin: auto;
+    }
+}
+
+/* Desktop Screens (1024px and above) */
+@media (min-width: 1024px) {
+    .projects {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    }
+
+    nav ul li {
+        margin: 15px;
+    }
+
+    nav ul li a {
+        font-size: 1.5rem;
+    }
+}
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -25,15 +50,8 @@ body {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
-}
+} 
 
-
-/* Center content and limit width */
-section {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-}
 
 /* Header Styling */
 header {
@@ -91,18 +109,27 @@ h2 {
 }
 
 section {
-    margin-top: 40px;
-    padding: 20px;
-    background: #1e1e1e;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 50px; /* Slightly more spacing for better separation */
+    margin-bottom: 50px;
+    padding: 30px; /* More padding for better readability */
+    background: #242424; /* A slightly lighter dark shade for contrast */
+    border-radius: 12px; /* Smoother corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+    max-width: 900px; /* Increase max-width slightly */
+    width: 90%; /* Makes it more responsive on smaller screens */
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff; /* Ensure text is visible on dark background */
+    line-height: 1.6; /* Improves readability */
+    
 }
+
 
 .project {
     background: #2a2a2a;
     padding: 15px;
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 20px;    
 }
 .project a {
     color: #ffcc00;
@@ -184,4 +211,70 @@ footer a {
 
 footer a:hover {
     color: #ff6600;
+}
+
+:root {
+    /* Light Mode Colors (Default) */
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --header-background: #1e1e1e;
+    --footer-background: #1e1e1e;
+    --link-color: #ffcc00;
+    --link-hover-color: #ff6600;
+}
+
+/* Dark Mode Variables */
+.dark-mode {
+    --background-color: #1e1e1e;
+    --text-color: #ffffff;
+    --header-background: #2a2a2a;
+    --footer-background: #2a2a2a;
+    --link-color: #ffcc00;
+    --link-hover-color: #ff6600;
+}
+
+/* Apply Variables */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+.dark-mode {
+    --background-color: #1e1e1e;
+    --text-color: #ffffff;
+}
+
+
+/* Header and Footer Styling */
+header, footer {
+    background-color: var(--header-background);
+    color: var(--text-color);
+}
+
+/* Links */
+a {
+    color: var(--link-color);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Button Styling */
+#theme-toggle {
+    padding: 10px 20px;
+    background-color: #ff6600; /* Button color */
+    color: white; /* Text color */
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: #ff9900; /* Hover effect */
 }
