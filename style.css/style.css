@@ -80,12 +80,17 @@ nav ul {
     list-style: none;
     text-align: center;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: block;
+    margin: 5px 0;
 }
+
 
 nav ul li a {
     text-decoration: none;
@@ -155,9 +160,14 @@ input, textarea, button {
 }
 
 input, textarea {
-    background-color: #222;
-    color: #fff;
-}
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid #ccc; /* Light border to enhance visibility */
+    padding: 10px;
+    width: 100%;
+       
+    }
+    
 
 button {
     padding: 10px 20px;
@@ -192,14 +202,12 @@ button:hover {
 
 /* Footer */
 footer {
-    text-align: center;  /* Centers text and inline elements */
-    padding: 1px;
-    background-color: #1e1e1e;
-    display: flex;
-    flex-direction: column;
-    align-items: center;  /* Centers everything inside */
-    justify-content: center;
+    background-color: var(--footer-background);
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px;
 }
+
 
 footer a {
     color: #ffcc00;
@@ -218,7 +226,7 @@ footer a:hover {
     --background-color: #ffffff;
     --text-color: #000000;
     --header-background: #1e1e1e;
-    --footer-background: #1e1e1e;
+    --footer-background: #e6e6fa;
     --link-color: #ffcc00;
     --link-hover-color: #ff6600;
 }
@@ -228,7 +236,7 @@ footer a:hover {
     --background-color: #1e1e1e;
     --text-color: #ffffff;
     --header-background: #2a2a2a;
-    --footer-background: #2a2a2a;
+    --footer-background: #1c3b3b;
     --link-color: #ffcc00;
     --link-hover-color: #ff6600;
 }
@@ -248,7 +256,7 @@ body {
 
 
 /* Header and Footer Styling */
-header, footer {
+header {
     background-color: var(--header-background);
     color: var(--text-color);
 }
